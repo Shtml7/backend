@@ -96,7 +96,7 @@
                             <artifactId>${project.artifactId}</artifactId>
                             <type>war</type>
                             <properties>
-                                <context>/scoardboard-backend</context>
+                                <context>/scoardboard</context>
                             </properties>
                         </deployable>
                     </deployables>
