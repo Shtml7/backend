@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="scoreboard-backend:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="scoreboard-backend-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="scoreboard-backend:war exploded" />
+    </root>
+  </artifact>
+</component>
