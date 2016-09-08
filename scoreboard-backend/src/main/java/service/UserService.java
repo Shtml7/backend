@@ -2,7 +2,6 @@ package service;
 
 import dao.UserDao;
 import model.User;
-import sun.reflect.annotation.ExceptionProxy;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
