@@ -5,18 +5,21 @@
  */
 package api;
 
+import org.glassfish.jersey.media.multipart.FormDataParam;
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import model.User;
 import service.UserService;
+import util.FileUtil;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.print.attribute.standard.Media;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.io.InputStream;
 
 /**
- *
  * @author Eric
  */
 @Path("/users")
@@ -25,22 +28,8 @@ public class UserAPI {
 
     @Inject
     private UserService userService;
-    
-    public UserAPI(){}
 
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    public User createUser(User user){
-        if (user.getUsername().isEmpty()) {
-            throw new WebApplicationException("Invalid request", Response.Status.BAD_REQUEST);
-        }
-        try {
-            return userService.addUser(user);
-        } catch(Exception ex) {
-            throw new WebApplicationException(ex.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
-        }
-
+    public UserAPI() {
     }
 
     @GET
@@ -66,11 +55,42 @@ public class UserAPI {
     }
 
 
-    @Path("/test")
     @GET
+    @Path("/test")
     @Produces(MediaType.APPLICATION_JSON)
     public String test() {
         return "{\"name\":\"kees\"}";
     }
+
     
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    public String upload(@FormDataParam("file") InputStream uploadedInputStream, @FormDataParam("name") String name, @FormDataParam("extension") String extension) {
+
+        // Path format //10.217.14.97/Installables/uploaded/
+
+        if(!extension.contains(".")) {
+            extension = "." + extension;
+        }
+
+        String filename = name + extension;
+
+        User user = new User();
+        user.setUsername(name);
+        user.setImageUrl(filename);
+
+        try {
+            userService.addUser(user);
+            FileUtil.writeToFile(uploadedInputStream, filename);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            throw new WebApplicationException(ex.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
+        }
+
+
+        System.out.println("Upload to: " + filename);
+        return filename;
+    }
+
 }
