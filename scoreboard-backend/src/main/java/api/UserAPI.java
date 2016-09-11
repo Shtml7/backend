@@ -63,12 +63,16 @@ public class UserAPI {
     }
 
 
+    @Path("/upload")
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     public String upload(@FormDataParam("file") InputStream uploadedInputStream, @FormDataParam("name") String name, @FormDataParam("extension") String extension) {
 
         // Path format //10.217.14.97/Installables/uploaded/
+        System.out.println("File: " + uploadedInputStream.toString());
+        System.out.println("name: " + name);
+        System.out.println("ext: " + extension);
 
         if(!extension.contains(".")) {
             extension = "." + extension;
