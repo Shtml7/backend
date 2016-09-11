@@ -62,7 +62,7 @@ public class UserAPI {
         return "{\"name\":\"kees\"}";
     }
 
-    
+
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.MULTIPART_FORM_DATA)

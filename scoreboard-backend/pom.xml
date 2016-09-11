@@ -94,6 +94,7 @@
                             <cargo.remote.password>admin</cargo.remote.password>
                             <cargo.glassfish.admin.port>4848</cargo.glassfish.admin.port>
                             <cargo.glassfish.domain.name>domain1</cargo.glassfish.domain.name>
+                            <cargo.runtime.args>force=true</cargo.runtime.args>
                         </properties>
                     </configuration>
                     <deployables>
