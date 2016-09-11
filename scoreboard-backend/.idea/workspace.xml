@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e48820b3-97e1-47ba-a358-cfb1f7e94b23" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/scoreboard_backend_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/scoreboard_backend_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scoreboard-backend.iml" afterPath="$PROJECT_DIR$/scoreboard-backend.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/api/UserAPI.java" afterPath="$PROJECT_DIR$/src/main/java/api/UserAPI.java" />
     </list>
     <ignored path="scoreboard-backend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,10 +50,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserAPI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserAPI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/api/UserAPI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18849841">
+            <state vertical-scroll-proportion="0.0">
               <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -109,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.625">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.051903114">
+              <caret line="28" column="35" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -169,8 +166,8 @@
         <option value="$PROJECT_DIR$/src/main/java/config/ApplicationConfig.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/util/FileUtil.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/api/UserAPI.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -1101,16 +1098,16 @@
       <workItem from="1473246462065" duration="1215000" />
       <workItem from="1473325214733" duration="10007000" />
       <workItem from="1473342211247" duration="310000" />
-      <workItem from="1473622299724" duration="11219000" />
+      <workItem from="1473622299724" duration="11378000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23943000" />
+    <option name="totallyTimeSpent" value="24102000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="722" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1476,21 +1473,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/api/UserAPI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18849841">
+        <state vertical-scroll-proportion="0.0">
           <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.051903114">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
