@@ -4,6 +4,10 @@ import model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import java.util.List;
 
 /**
  * Created by Eric on 08-09-16.
@@ -38,6 +42,20 @@ public class UserDaoJPA implements UserDao {
             return (User) entityManager.createNamedQuery("findUserByUsername").setParameter("username", username).getSingleResult();
         } catch (Exception ex) {
             throw new Exception("Could not find user with username: " + username, ex);
+        }
+    }
+
+    @Override
+    public List<User> findAll() throws Exception {
+        try {
+            CriteriaBuilder qb = entityManager.getCriteriaBuilder();
+            CriteriaQuery<User> c = qb.createQuery(User.class);
+            c.from(User.class);
+
+            TypedQuery<User> query = entityManager.createQuery(c);
+            return query.getResultList();
+        } catch(Exception ex) {
+            throw new Exception("Could not find users in database", ex);
         }
     }
 }

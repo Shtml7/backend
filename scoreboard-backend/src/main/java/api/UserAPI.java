@@ -18,6 +18,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * @author Eric
@@ -29,7 +30,16 @@ public class UserAPI {
     @Inject
     private UserService userService;
 
-    public UserAPI() {
+    public UserAPI() {}
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<User> getAllUsers() {
+        try {
+            return userService.getAllUsers();
+        } catch (Exception ex) {
+            throw new WebApplicationException(ex.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @GET

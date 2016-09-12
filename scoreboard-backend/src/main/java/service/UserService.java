@@ -5,6 +5,7 @@ import model.User;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import java.util.List;
 
 /**
  * Created by Eric on 08-09-16.
@@ -25,5 +26,9 @@ public class UserService {
 
     public User getUserByUsername(String username) throws Exception {
         return userDao.findByUsername(username);
+    }
+
+    public List<User> getAllUsers() throws Exception {
+        return userDao.findAll();
     }
 }
