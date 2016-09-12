@@ -29,9 +29,12 @@ public class ApplicationConfig extends Application {
      * It is automatically populated with
      * all resources defined in the project.
      * If required, comment out calling this method in getClasses().
+     * 
+     * Moet er altijd in blijven staan
+     * resources.add(MultiPartFeature.class);
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(MultiPartFeature.class);
+        resources.add(api.GameApi.class);
         resources.add(api.UserAPI.class);
     }
     
