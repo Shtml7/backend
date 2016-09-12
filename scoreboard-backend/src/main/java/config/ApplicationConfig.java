@@ -34,6 +34,7 @@ public class ApplicationConfig extends Application {
      * resources.add(MultiPartFeature.class);
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(MultiPartFeature.class);
         resources.add(api.GameApi.class);
         resources.add(api.UserAPI.class);
     }
