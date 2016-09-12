@@ -88,23 +88,26 @@ public class UserAPI {
             extension = "." + extension;
         }
 
-        String filename = name + extension;
+        //String filename = name + extension;
 
         User user = new User();
         user.setUsername(name);
-        user.setImageUrl(filename);
+        //user.setImageUrl(filename);
 
         try {
-            userService.addUser(user);
+            user = userService.addUser(user);
+            String filename = user.getId() + extension;
             FileUtil.writeToFile(uploadedInputStream, filename);
+            user.setImageUrl(filename);
+            userService.update(user);
         } catch (Exception ex) {
             ex.printStackTrace();
             throw new WebApplicationException(ex.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
         }
 
 
-        System.out.println("Upload to: " + filename);
-        return filename;
+        System.out.println("Upload to: " + user.getId() + extension);
+        return user.getId() + extension;
     }
 
 }

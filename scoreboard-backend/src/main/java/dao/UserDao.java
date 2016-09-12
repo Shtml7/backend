@@ -16,4 +16,6 @@ public interface UserDao {
     User findByUsername(String username) throws Exception;
 
     List<User> findAll() throws Exception;
+
+    User update(User user) throws Exception;
 }

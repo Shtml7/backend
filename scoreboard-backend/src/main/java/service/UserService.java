@@ -31,4 +31,8 @@ public class UserService {
     public List<User> getAllUsers() throws Exception {
         return userDao.findAll();
     }
+
+    public User update(User user) throws Exception {
+        return userDao.update(user);
+    }
 }

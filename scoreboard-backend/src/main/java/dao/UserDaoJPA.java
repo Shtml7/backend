@@ -21,6 +21,7 @@ public class UserDaoJPA implements UserDao {
     public User create(User user) throws Exception {
         try {
             entityManager.persist(user);
+            entityManager.flush();
             return user;
         } catch (Exception ex) {
             throw new Exception("Could not create user", ex);
@@ -56,6 +57,16 @@ public class UserDaoJPA implements UserDao {
             return query.getResultList();
         } catch(Exception ex) {
             throw new Exception("Could not find users in database", ex);
+        }
+    }
+
+    @Override
+    public User update(User user) throws Exception {
+        try {
+            entityManager.merge(user);
+            return entityManager.find(User.class, user.getId());
+        } catch (Exception ex) {
+            throw new Exception("Could not update user in database", ex);
         }
     }
 }
