@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,9 +20,9 @@ public class Game implements Serializable {
     @ManyToOne
     private User owner;
     private boolean isActive;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Team team1;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Team team2;
 
     public Game() {

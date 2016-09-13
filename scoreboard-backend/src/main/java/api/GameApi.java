@@ -6,6 +6,8 @@
 package api;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Path;
@@ -34,6 +36,17 @@ public class GameApi {
     public List<Game> getAllUsers() {
         try {
             return gameService.getAllGames();
+        } catch (Exception ex) {
+            throw new WebApplicationException(ex.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
+    @Path("/create")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Game create(Game game) {
+        try {
+            return gameService.update(game);
         } catch (Exception ex) {
             throw new WebApplicationException(ex.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
         }
