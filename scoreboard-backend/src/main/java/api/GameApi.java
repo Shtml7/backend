@@ -40,13 +40,13 @@ public class GameApi {
             throw new WebApplicationException(ex.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
         }
     }
-    
-    @Path("/create")
+
     @POST
     @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
     public Game create(Game game) {
         try {
-            return gameService.update(game);
+            return gameService.addGame(game);
         } catch (Exception ex) {
             throw new WebApplicationException(ex.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
         }

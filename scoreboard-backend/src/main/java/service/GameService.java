@@ -21,11 +21,11 @@ public class GameService {
     @Inject
     private GameDao gameDao;
     
-    public Game addUser(Game user) throws Exception {
-        return gameDao.create(user);
+    public Game addGame(Game game) throws Exception {
+        return gameDao.create(game);
     }
 
-    public Game getUserById(Long id) throws Exception {
+    public Game getGameById(Long id) throws Exception {
         return gameDao.findById(id);
     }
 
@@ -33,8 +33,8 @@ public class GameService {
         return gameDao.findAll();
     }
 
-    public Game update(Game user) throws Exception {
-        return gameDao.update(user);
+    public Game update(Game game) throws Exception {
+        return gameDao.update(game);
     }
     
 }

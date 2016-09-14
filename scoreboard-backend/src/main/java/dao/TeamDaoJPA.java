@@ -29,7 +29,7 @@ public class TeamDaoJPA implements TeamDao{
             entityManager.flush();
             return team;
         } catch (Exception ex) {
-            throw new Exception("Could not create user", ex);
+            throw new Exception("Could not create team", ex);
         }
     }
 
@@ -38,7 +38,7 @@ public class TeamDaoJPA implements TeamDao{
         try {
             return entityManager.find(Team.class, id);
         } catch (Exception ex) {
-            throw new Exception("Could not find user with id: " + id, ex);
+            throw new Exception("Could not find team with id: " + id, ex);
         }
     }
 
@@ -52,7 +52,7 @@ public class TeamDaoJPA implements TeamDao{
             TypedQuery<Team> query = entityManager.createQuery(c);
             return query.getResultList();
         } catch(Exception ex) {
-            throw new Exception("Could not find users in database", ex);
+            throw new Exception("Could not find teams in database", ex);
         }
     }
 
@@ -62,7 +62,7 @@ public class TeamDaoJPA implements TeamDao{
             entityManager.merge(team);
             return entityManager.find(Team.class, team.getId());
         } catch (Exception ex) {
-            throw new Exception("Could not update user in database", ex);
+            throw new Exception("Could not update team in database", ex);
         }
     }
     

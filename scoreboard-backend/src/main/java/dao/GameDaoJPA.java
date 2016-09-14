@@ -29,7 +29,7 @@ public class GameDaoJPA implements GameDao{
             entityManager.flush();
             return game;
         } catch (Exception ex) {
-            throw new Exception("Could not create user", ex);
+            throw new Exception("Could not add game to databse", ex);
         }
     }
 
@@ -38,7 +38,7 @@ public class GameDaoJPA implements GameDao{
         try {
             return entityManager.find(Game.class, id);
         } catch (Exception ex) {
-            throw new Exception("Could not find user with id: " + id, ex);
+            throw new Exception("Could not find game with id: " + id, ex);
         }
     }
 
@@ -52,7 +52,7 @@ public class GameDaoJPA implements GameDao{
             TypedQuery<Game> query = entityManager.createQuery(c);
             return query.getResultList();
         } catch(Exception ex) {
-            throw new Exception("Could not find users in database", ex);
+            throw new Exception("Could not find games in database", ex);
         }
     }
 
@@ -62,7 +62,7 @@ public class GameDaoJPA implements GameDao{
             entityManager.merge(game);
             return entityManager.find(Game.class, game.getId());
         } catch (Exception ex) {
-            throw new Exception("Could not update user in database", ex);
+            throw new Exception("Could not update game in database", ex);
         }
     }
     

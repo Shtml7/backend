@@ -21,15 +21,15 @@ public class TeamService {
     @Inject
     private TeamDao teamDao;
     
-    public Team addUser(Team team) throws Exception {
+    public Team addTeam(Team team) throws Exception {
         return teamDao.create(team);
     }
 
-    public Team getUserById(Long id) throws Exception {
+    public Team getTeamById(Long id) throws Exception {
         return teamDao.findById(id);
     }
 
-    public List<Team> getAllGames() throws Exception {
+    public List<Team> getAllTeam() throws Exception {
         return teamDao.findAll();
     }
 
