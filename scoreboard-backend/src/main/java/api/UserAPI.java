@@ -77,7 +77,7 @@ public class UserAPI {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public String upload(@FormDataParam("file") InputStream uploadedInputStream, @FormDataParam("name") String name, @FormDataParam("extension") String extension) {
+    public Long upload(@FormDataParam("file") InputStream uploadedInputStream, @FormDataParam("name") String name, @FormDataParam("extension") String extension) {
 
         // Path format //10.217.14.97/Installables/uploaded/
         System.out.println("File: " + uploadedInputStream.toString());
@@ -107,7 +107,7 @@ public class UserAPI {
 
 
         System.out.println("Upload to: " + user.getId() + extension);
-        return user.getId() + extension;
+        return user.getId();
     }
 
 }
