@@ -51,5 +51,16 @@ public class GameApi {
             throw new WebApplicationException(ex.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
         }
     }
+    
+    @PUT
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Game update(Game game) {
+        try {
+            return gameService.update(game);
+        } catch (Exception ex) {
+            throw new WebApplicationException(ex.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
+        }
+    }
 
 }
