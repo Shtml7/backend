@@ -63,4 +63,15 @@ public class GameApi {
         }
     }
 
+    @Path("/{gameId}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Game getGameById(@PathParam("gameId") Long id){
+        try {
+            return gameService.getGameById(id);
+        } catch (Exception ex) {
+            throw new WebApplicationException(ex.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 }
