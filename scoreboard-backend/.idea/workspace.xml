@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e48820b3-97e1-47ba-a358-cfb1f7e94b23" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/api/GameApi.java" afterPath="$PROJECT_DIR$/src/main/java/api/GameApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/GameService.java" afterPath="$PROJECT_DIR$/src/main/java/service/GameService.java" />
     </list>
     <ignored path="scoreboard-backend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,23 +68,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/GameService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#837#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.15647922">
+              <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameApi.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameApi.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/api/GameApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7799511">
+            <state vertical-scroll-proportion="0.0">
               <caret line="72" column="102" selection-start-line="72" selection-start-column="102" selection-end-line="72" selection-end-column="102" />
               <folding />
             </state>
@@ -173,11 +169,11 @@
         <option value="$PROJECT_DIR$/src/main/java/dao/UserDaoJPA.java" />
         <option value="$PROJECT_DIR$/src/main/java/config/ApplicationConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/TeamService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/GameService.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/GameDaoJPA.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/TeamDaoJPA.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/UserAPI.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/GameApi.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/GameService.java" />
       </list>
     </option>
   </component>
@@ -1115,12 +1111,12 @@
       <workItem from="1473862976664" duration="3066000" />
       <workItem from="1473926482396" duration="211000" />
       <workItem from="1473960576558" duration="305000" />
-      <workItem from="1473961233604" duration="3858000" />
+      <workItem from="1473961233604" duration="4483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35521000" />
+    <option name="totallyTimeSpent" value="36146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="722" extended-state="6" />
@@ -1520,17 +1516,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/GameService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#837#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/GameDaoJPA.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1590,8 +1575,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/api/GameApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7799511">
+        <state vertical-scroll-proportion="0.0">
           <caret line="72" column="102" selection-start-line="72" selection-start-column="102" selection-end-line="72" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/GameService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15647922">
+          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
           <folding />
         </state>
       </provider>
