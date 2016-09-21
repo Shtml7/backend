@@ -20,7 +20,7 @@ public class GameService {
     
     @Inject
     private GameDao gameDao;
-    
+
     public Game addGame(Game game) throws Exception {
         game.setIsActive(true);
         return gameDao.create(game);

@@ -11,6 +11,7 @@ import model.Game;
 /**
  *
  * @author maikel
+ * Dao for games
  */
 public interface GameDao {
     

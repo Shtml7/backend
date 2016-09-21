@@ -32,6 +32,10 @@ public class UserAPI {
 
     public UserAPI() {}
 
+    /**
+     * Gets all registered users
+     * @return A list with all users
+     */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<User> getAllUsers() {
@@ -42,6 +46,11 @@ public class UserAPI {
         }
     }
 
+    /**
+     * Gets a user by id
+     * @param id The id of the users to be returned
+     * @return The user with the given id
+     */
     @GET
     @Path("/{userId}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -53,33 +62,19 @@ public class UserAPI {
         }
     }
 
-    @GET
-    @Path("/username={username}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public User getUserByUsername(@PathParam("username") String username) {
-        try {
-            return userService.getUserByUsername(username);
-        } catch (Exception ex) {
-            throw new WebApplicationException(ex.getMessage(), Response.Status.NOT_FOUND);
-        }
-    }
-
-
-    @GET
-    @Path("/test")
-    @Produces(MediaType.APPLICATION_JSON)
-    public String test() {
-        return "{\"name\":\"kees\"}";
-    }
-
-
+    /**
+     * Creates a new user
+     * @param uploadedInputStream The profile image of the new user
+     * @param name The name of the new user
+     * @param extension The extension of the uploaded image
+     * @return The id of the newly created user
+     */
     @Path("/upload")
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     public Long upload(@FormDataParam("file") InputStream uploadedInputStream, @FormDataParam("name") String name, @FormDataParam("extension") String extension) {
 
-        // Path format //10.217.14.97/Installables/uploaded/
         System.out.println("File: " + uploadedInputStream.toString());
         System.out.println("name: " + name);
         System.out.println("ext: " + extension);
@@ -88,11 +83,8 @@ public class UserAPI {
             extension = "." + extension;
         }
 
-        //String filename = name + extension;
-
         User user = new User();
         user.setUsername(name);
-        //user.setImageUrl(filename);
 
         try {
             user = userService.addUser(user);
@@ -109,5 +101,4 @@ public class UserAPI {
         System.out.println("Upload to: " + user.getId() + extension);
         return user.getId();
     }
-
 }

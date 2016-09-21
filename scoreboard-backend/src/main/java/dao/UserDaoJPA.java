@@ -17,6 +17,12 @@ public class UserDaoJPA implements UserDao {
     @PersistenceContext(name = "SmartMobilePu")
     private EntityManager entityManager;
 
+    /**
+     * Creates a new user
+     * @param user The user to be added to the database
+     * @return The newly added user
+     * @throws Exception When it is not possible to add the user to the database
+     */
     @Override
     public User create(User user) throws Exception {
         try {
@@ -28,6 +34,12 @@ public class UserDaoJPA implements UserDao {
         }
     }
 
+    /**
+     * Gets an user with the given id
+     * @param id The id of the user
+     * @return The user with the given id
+     * @throws Exception When it is not possible to find the user with id
+     */
     @Override
     public User findById(Long id) throws Exception {
         try {
@@ -37,15 +49,11 @@ public class UserDaoJPA implements UserDao {
         }
     }
 
-    @Override
-    public User findByUsername(String username) throws Exception {
-        try {
-            return (User) entityManager.createNamedQuery("findUserByUsername").setParameter("username", username).getSingleResult();
-        } catch (Exception ex) {
-            throw new Exception("Could not find user with username: " + username, ex);
-        }
-    }
-
+    /**
+     * Gets all users known in the database
+     * @return A list with users
+     * @throws Exception When it is not possible to get the users
+     */
     @Override
     public List<User> findAll() throws Exception {
         try {
@@ -60,6 +68,12 @@ public class UserDaoJPA implements UserDao {
         }
     }
 
+    /**
+     * Updates an existing user
+     * @param user The user to be updated in the database
+     * @return The updated user
+     * @throws Exception When it is not possible to update the user
+     */
     @Override
     public User update(User user) throws Exception {
         try {

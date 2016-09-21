@@ -16,12 +16,19 @@ import model.Game;
 /**
  *
  * @author maikel
+ * JPA implementation of the Game dao
  */
 public class GameDaoJPA implements GameDao{
     
     @PersistenceContext(name = "SmartMobilePu")
     private EntityManager entityManager;
 
+    /**
+     * Creates a new game
+     * @param game The game to be added in the database
+     * @return The added game in the databse
+     * @throws Exception When it is not possible to add the game to the database
+     */
     @Override
     public Game create(Game game) throws Exception {
         try {
@@ -33,6 +40,12 @@ public class GameDaoJPA implements GameDao{
         }
     }
 
+    /**
+     * Gets an game with the given id
+     * @param id The id of the game
+     * @return The game with the given id
+     * @throws Exception When it is not possible to find the game
+     */
     @Override
     public Game findById(Long id) throws Exception {
         try {
@@ -42,6 +55,11 @@ public class GameDaoJPA implements GameDao{
         }
     }
 
+    /**
+     * Gets all games
+     * @return A list of all games known in the database
+     * @throws Exception When it is not possible to retrieve the games
+     */
     @Override
     public List<Game> findAll() throws Exception {
         try {
@@ -56,6 +74,12 @@ public class GameDaoJPA implements GameDao{
         }
     }
 
+    /**
+     * Updates an existing game
+     * @param game The game to be updated in the database
+     * @return The updated game
+     * @throws Exception When it is not possible to update the game
+     */
     @Override
     public Game update(Game game) throws Exception {
          try {
@@ -65,5 +89,4 @@ public class GameDaoJPA implements GameDao{
             throw new Exception("Could not update game in database", ex);
         }
     }
-    
 }

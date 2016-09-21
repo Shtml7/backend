@@ -16,12 +16,19 @@ import model.Team;
 /**
  *
  * @author maikel
+ * JPA implementation of the Team dao
  */
 public class TeamDaoJPA implements TeamDao{
     
     @PersistenceContext(name = "SmartMobilePu")
     private EntityManager entityManager;
 
+    /**
+     * Creates a new team
+     * @param team The team to be added to the database
+     * @return The newly added team
+     * @throws Exception When it is not possible to add a team to the database
+     */
     @Override
     public Team create(Team team) throws Exception {
         try {
@@ -33,6 +40,12 @@ public class TeamDaoJPA implements TeamDao{
         }
     }
 
+    /**
+     * Gets a team based on the id
+     * @param id The id of the team
+     * @return The team with given id
+     * @throws Exception When it is not possible to find the team with the given id
+     */
     @Override
     public Team findById(Long id) throws Exception {
         try {
@@ -42,6 +55,11 @@ public class TeamDaoJPA implements TeamDao{
         }
     }
 
+    /**
+     * Gets all teams
+     * @return A list with all teams
+     * @throws Exception When it is not possible to retrieve all teams
+     */
     @Override
     public List<Team> findAll() throws Exception {
         try {
@@ -56,6 +74,12 @@ public class TeamDaoJPA implements TeamDao{
         }
     }
 
+    /**
+     * Updates an existing team
+     * @param team The team to be updated in the database
+     * @return The updated game
+     * @throws Exception when it is not possible to update the team
+     */
     @Override
     public Team update(Team team) throws Exception {
          try {

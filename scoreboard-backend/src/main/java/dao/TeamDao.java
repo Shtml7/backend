@@ -11,6 +11,7 @@ import model.Team;
 /**
  *
  * @author maikel
+ * Dao for teams
  */
 public interface TeamDao {
     

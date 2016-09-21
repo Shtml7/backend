@@ -31,9 +31,13 @@ public class GameApi {
     public GameApi() {
     }
 
+    /**
+     * Get all known games
+     * @return A list with all games
+     */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Game> getAllUsers() {
+    public List<Game> getAllGames() {
         try {
             return gameService.getAllGames();
         } catch (Exception ex) {
@@ -41,6 +45,11 @@ public class GameApi {
         }
     }
 
+    /**
+     * Creates a new Game
+     * @param game The new game to be added to the database
+     * @return The newly added game if successful, otherwise an exception
+     */
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -51,7 +60,12 @@ public class GameApi {
             throw new WebApplicationException(ex.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
         }
     }
-    
+
+    /**
+     * Updates an existing game e.g. when the score changes
+     * @param game The new game
+     * @return The updated game from the database if successful
+     */
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -63,6 +77,11 @@ public class GameApi {
         }
     }
 
+    /**
+     * Gets a game by id
+     * @param id The id of the game
+     * @return The game with the given id
+     */
     @Path("/{gameId}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -73,5 +92,4 @@ public class GameApi {
             throw new WebApplicationException(ex.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
         }
     }
-
 }
